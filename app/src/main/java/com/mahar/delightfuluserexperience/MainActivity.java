@@ -55,17 +55,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Log.i("nightmode","onOptionsItem selected");
         if(item.getItemId()==R.id.night_mode){
             int nightMode=AppCompatDelegate.getDefaultNightMode();
             if(nightMode==AppCompatDelegate.MODE_NIGHT_YES){
+                Log.i("nightmode","night mode yes");
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             }else{
+                Log.i("nightmode","night mode no");
+
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             }
             recreate();
         }
-        return true;
-//        return super.onOptionsItemSelected(item);
+//        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
